@@ -118,3 +118,45 @@ select, .search { border-color: #b9cdd5; }
 .independent-evaluation p { color: #d1e0e5; }
 
 ::selection { background: #bde3db; color: var(--ink); }
+
+/* Variable definitions: hover, keyboard focus, and touch. */
+.variable-hint {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  text-decoration: underline dotted #8aa8af;
+  text-underline-offset: 4px;
+  cursor: help;
+}
+.variable-hint:hover, .variable-hint:focus-visible { color: var(--accent); }
+.variable-tooltip {
+  position: fixed;
+  z-index: 100;
+  width: min(360px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  padding: 18px 20px;
+  border: 1px solid var(--accent-line);
+  border-top: 3px solid var(--accent);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 8px 30px #16334426;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.variable-tooltip > strong { color: var(--accent); font-size: 14px; }
+.variable-tooltip > p { margin: 8px 0 12px; }
+.variable-tooltip > small {
+  display: block;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}

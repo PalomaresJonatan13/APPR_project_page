@@ -8,6 +8,9 @@ Secciones desarrolladas: **Sepsis**, **Datos**, **Preparación de los datos**, *
 - `styles.css`: estructura visual y estilos adaptables.
 - `theme.css`: paleta de azul petróleo (`#163344`), teal (`#0C756F`) y blanco frío (`#F5F8FA`), con tonos claros para superficies. Se carga después de los estilos de estructura.
 - `app.js`: pestañas, selector de conjuntos y explorador de variables.
+- `variable-details.js`: definiciones ampliadas y unidades publicadas, extraídas de `docs/data_dictionary.md`.
+- `variable-tooltips.js`: ayuda flotante sobre el nombre o la descripción de cada variable, accesible con hover, foco de teclado o toque.
+- `summarize_dictionary.py`: regenera únicamente `variable-details.js`, leyendo el diccionario original sin modificarlo.
 - `models.js`: explorador de las tres arquitecturas, diagramas y agrupaciones de variables, contrastados con las implementaciones y configuraciones finales.
 - `experiments.js`: configuraciones de entrenamiento y comparación interactiva de métricas de validación y prueba.
 - `experiment-data.js`: agregados de las 12 corridas guardadas, sin predicciones individuales ni tiempos.
@@ -20,6 +23,7 @@ Para actualizar las estadísticas desde esta carpeta:
 ```powershell
 python -B summarize_data.py
 python -B summarize_experiments.py
+python -B summarize_dictionary.py
 ```
 
 Los recuentos y porcentajes se contrastaron con las salidas de `APPR_project/notebooks/exploration.ipynb`, especialmente las celdas de resumen de cohortes y comparación de faltantes. El porcentaje combinado se pondera por número de registros, no por número de pacientes.

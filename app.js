@@ -66,7 +66,7 @@
       const row = document.createElement('tr');
       const rate = missingRate(variable);
       // All values below come from the fixed dictionary and generated aggregate counts.
-      row.innerHTML = `<td>${variable.key}</td><td>${variable.description}</td><td>${groups[variable.group].name}</td><td><div class="missing-cell"><span class="mini-track" aria-hidden="true"><span style="width:${rate}%"></span></span><b>${percent(rate)}</b></div></td>`;
+      row.innerHTML = `<td><button type="button" class="variable-hint" data-variable="${variable.key}">${variable.key}</button></td><td><button type="button" class="variable-hint" data-variable="${variable.key}">${variable.description}</button></td><td>${groups[variable.group].name}</td><td><div class="missing-cell"><span class="mini-track" aria-hidden="true"><span style="width:${rate}%"></span></span><b>${percent(rate)}</b></div></td>`;
       $('#variable-rows').append(row);
     }
     if (!visible.length) { const row = document.createElement('tr'); row.innerHTML = '<td colspan="4">No hay variables que coincidan con la búsqueda.</td>'; $('#variable-rows').append(row); }
