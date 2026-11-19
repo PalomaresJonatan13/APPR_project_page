@@ -5,7 +5,8 @@ Abre `index.html` directamente en un navegador. No requiere instalación, conexi
 Secciones desarrolladas: **Sepsis**, **Datos**, **Preparación de los datos**, **Modelos**, **Entrenamiento**, **Evaluación y comparación** y **Conclusiones**. Cada sección termina con un enlace a la siguiente, salvo Conclusiones.
 
 - `index.html`: estructura y contenido.
-- `styles.css`: estilos adaptables en escala de grises.
+- `styles.css`: estructura visual y estilos adaptables.
+- `theme.css`: paleta de azul petróleo (`#163344`), teal (`#0C756F`) y blanco frío (`#F5F8FA`), con tonos claros para superficies. Se carga después de los estilos de estructura.
 - `app.js`: pestañas, selector de conjuntos y explorador de variables.
 - `models.js`: explorador de las tres arquitecturas, diagramas y agrupaciones de variables, contrastados con las implementaciones y configuraciones finales.
 - `experiments.js`: configuraciones de entrenamiento y comparación interactiva de métricas de validación y prueba.

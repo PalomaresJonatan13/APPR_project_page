@@ -1,0 +1,120 @@
+/* Three base colors: petroleum blue, teal, and a cool white.
+   Pale surfaces and the light hero accent are tints of these colors. */
+:root {
+  --ink: #163344;
+  --muted: #566873;
+  --line: #d5e1e4;
+  --paper: #f5f8fa;
+  --surface: #fff;
+  --soft: #edf3f5;
+  --dark: #163344;
+  --accent: #0c756f;
+  --accent-hover: #095d58;
+  --accent-soft: #e7f3f0;
+  --accent-line: #bddbd4;
+  --accent-light: #8dd5c8;
+}
+
+/* Opening, navigation, and calls to the next section. */
+.masthead { color: #fff; }
+h1 span, .hero-art .trace { color: var(--accent-light); stroke: var(--accent-light); }
+.hero-art circle { fill: var(--accent-light); }
+.trace-ghost { stroke: #8dd5c812; }
+.brand-divider { background: #ffffff35; }
+.brand-caption, .edition, .masthead .eyebrow, .hero-art > span { color: #c0d5dc; }
+.hero-description { color: #d1e0e5; }
+.eyebrow { color: var(--accent); }
+.tab.active, .tab:not(:disabled):hover { color: var(--accent); }
+.tab.active:after { background: var(--accent); }
+.bridge .eyebrow { color: var(--accent-light); }
+.bridge .button { background: var(--accent); border-color: var(--accent); color: #fff; }
+.bridge .button:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, button:focus-visible, summary:focus-visible {
+  outline-color: var(--accent);
+}
+.bridge .button:focus-visible { outline-color: var(--accent-light); }
+.search:focus-within { outline-color: var(--accent); }
+.sources a, sup a { color: var(--accent); }
+sup a { border-color: var(--accent-line); }
+.sources a:hover, .source-badge:hover { color: var(--accent-hover); }
+.footer b { color: var(--ink); }
+
+/* Clinical context and dataset exploration. */
+.impact, .conclusion-lead {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+}
+.impact > strong, .impact-bottom b { color: var(--accent); }
+.impact-bottom { border-color: var(--accent-line); }
+.challenges svg { stroke: var(--accent); }
+.sequence-line { background: var(--accent-line); }
+.segmented, .dictionary-controls, .experiment-controls,
+.configuration-heading { background: var(--soft); border-color: var(--line); }
+.segmented [aria-pressed=true] { background: var(--accent); color: #fff; }
+.metrics strong, .hours strong { color: var(--ink); }
+.prevalence-track { background: var(--soft); }
+.prevalence-track span, .legend i:first-of-type { background: var(--accent); }
+.legend i:nth-of-type(2) { background: #d5e1e4; }
+.mini-track { background: var(--soft); }
+.mini-track span { background: #4e6c7e; }
+.timeline-track i:first-child { background: var(--line); }
+.timeline-track i:last-child { background: var(--accent); }
+.timeline-track:after { background: var(--ink); }
+#missing-total { color: var(--ink); background: var(--soft); border-color: #b9cdd5; }
+.source-badge { border-color: var(--accent-line); }
+.source-badge > span, .source-badge b { color: var(--accent); }
+thead, tbody tr:hover, .result-table tbody th { background: #f1f6f7; }
+th { color: var(--muted); }
+code, .formula { background: var(--soft); }
+.variable-chips code, .model-group .variable-chips code {
+  background: #f1f6f7;
+  border-color: var(--line);
+  color: var(--ink);
+}
+select, .search { border-color: #b9cdd5; }
+
+/* Preparation and architectures. */
+.step-marker { background: var(--accent-soft); border-color: var(--accent-line); }
+.step-marker svg { stroke: var(--accent); }
+.step-tag, .outline-label { color: var(--ink); background: var(--soft); border-color: var(--line); }
+.prep-overview strong, .input-symbol { color: var(--accent); }
+.split-track span:first-child { background: var(--ink); }
+.split-track span:last-child { background: var(--accent-light); }
+.context-strip, .next-priorities > li { border-left-color: var(--accent); }
+.recurrent-explainer, .search-space, .utility-explainer {
+  background: var(--soft);
+  border-color: var(--line);
+}
+.model-choice:hover { border-color: var(--accent); }
+.model-choice[aria-pressed=true] { color: #fff; background: var(--accent); border-color: var(--accent); }
+.model-choice[aria-pressed=true] > small { color: #e0f2ee; }
+.diagram-input, .diagram-fusion { background: var(--soft); border-color: #b9cdd5; }
+.lane-cell { background: var(--accent-soft); border-color: var(--accent-line); }
+.lane-cell b { color: var(--accent-hover); }
+.lane-cell > span { border-color: var(--accent-line); }
+.diagram-output { background: var(--ink); border-color: var(--ink); }
+.diagram-output .diagram-label, .diagram-output > span:last-child { color: #cee0e7; }
+.diagram-output > strong { color: var(--accent-light); }
+.architecture-figure figcaption { background: #f1f6f7; border-color: var(--line); }
+
+/* Scores and charts use the same two accent families throughout. */
+.config-score { background: var(--accent-soft); border-color: var(--accent-line); }
+.config-score-value > strong, .config-score > strong, .ap-multiple { color: var(--accent-hover); }
+.score-track { background: var(--soft); }
+#ap-chart .score-fill { background: var(--accent); }
+#utility-chart .score-fill { background: var(--ink); }
+.baseline-marker { border-color: #718c9a; }
+.result-table td.leading-score { color: var(--accent-hover); background: var(--accent-soft); }
+.evaluation-stats strong { color: var(--ink); }
+.utility-anchors b { color: var(--accent); }
+.utility-window svg path:nth-of-type(1) { stroke: #b9cdd5; }
+.utility-window svg path:nth-of-type(2) { fill: #c5e2da; }
+.utility-window svg path:nth-of-type(3) { stroke: var(--accent); }
+.utility-window svg path:nth-of-type(4) { stroke: #718c9a; }
+.utility-window svg circle { fill: var(--accent); }
+.conclusion-ap strong { color: var(--accent-hover); }
+.independent-evaluation { background: var(--ink); }
+.independent-evaluation p { color: #d1e0e5; }
+
+::selection { background: #bde3db; color: var(--ink); }
