@@ -7,6 +7,8 @@
   <title>APPR · Predicción temprana de sepsis</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="presentation.css">
+  <script src="presentation.js" defer></script>
   <script src="data-summary.js" defer></script>
   <script src="variable-details.js" defer></script>
   <script src="app.js" defer></script>
@@ -15,7 +17,139 @@
   <script src="experiment-data.js" defer></script>
   <script src="experiments.js" defer></script>
 </head>
-<body>
+<body class="presentation-mode">
+  <div id="presentation" aria-label="Presentación del proyecto">
+    <header class="deck-header">
+      <button class="brand deck-brand" type="button" data-toggle-view aria-label="APPR: cambiar a la versión completa" title="Cambiar a la versión completa"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x=".5" y=".5" width="29" height="29" rx="7" fill="none" stroke="currentColor"/><path d="M5 16h5l3-7 4 13 3-6h5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg> APPR</button>
+      <span class="deck-mode">PRESENTACIÓN <span>· Click en APPR para ver la versión completa</span></span>
+    </header>
+    <main class="deck-stage" id="diapositivas" aria-label="Diapositivas">
+      <section class="deck-slide deck-cover" aria-labelledby="deck-title">
+        <div class="deck-frame">
+        <div class="deck-cover-copy">
+          <p class="eyebrow">APRENDIZAJE PROFUNDO EN CUIDADOS INTENSIVOS</p>
+          <h1 id="deck-title" tabindex="-1">Predicción temprana<br>de <span>sepsis.</span></h1>
+          <p class="deck-lead">Reconocer el riesgo a través del tiempo.</p>
+          <p class="deck-subtitle">Un estudio con series clínicas de PhysioNet 2019.</p>
+          <div class="deck-author"><strong>Jonatan Palomares</strong><span>Aprendizaje profundo</span></div>
+        </div>
+        <div class="deck-signal" aria-hidden="true"><span>SERIES TEMPORALES CLÍNICAS</span><svg viewBox="0 0 420 180"><path class="deck-trace-shadow" d="M0 103H54L67 91 82 115 99 94 110 106H147L160 75 176 135 193 95 205 103H251L266 52 283 148 304 91 320 104H420"/><path class="deck-trace" d="M0 103H54L67 91 82 115 99 94 110 106H147L160 75 176 135 193 95 205 103H251L266 52 283 148 304 91 320 104H420"/><circle cx="320" cy="104" r="4"/></svg><span>OBSERVAR · COMPRENDER · ANTICIPAR</span></div>
+        </div>
+      </section>
+      <section class="deck-slide deck-context" aria-labelledby="deck-context-title" hidden>
+        <div class="deck-frame">
+        <div class="deck-section-heading"><p class="eyebrow">01 / CONTEXTO CLÍNICO</p><h2 id="deck-context-title" tabindex="-1">Una infección. Una respuesta desregulada.<br><span>La vida en riesgo.</span></h2></div>
+        <div class="deck-clinical-grid">
+          <article class="deck-definition"><h3>¿Qué es la sepsis?</h3><p>Una respuesta desregulada del organismo a una infección que provoca <strong>disfunción orgánica potencialmente mortal.</strong></p><div class="deck-sequence" aria-label="Infección, respuesta desregulada, disfunción orgánica"><span>Infección</span><i aria-hidden="true">→</i><span>Respuesta<br>desregulada</span><i aria-hidden="true">→</i><span>Disfunción<br>orgánica</span></div><p class="deck-takeaway">Reconocerla y tratarla a tiempo es fundamental.</p></article>
+          <aside class="deck-impact"><p class="eyebrow">DIMENSIÓN GLOBAL · OMS</p><strong>11 <span>millones</span></strong><p>de muertes relacionadas con sepsis<br>en el mundo en 2017.</p><div><b>≈ 20 %</b><span>de todas las muertes mundiales.</span></div></aside>
+        </div>
+        <p class="deck-source">Fuente: <a href="https://www.who.int/news-room/fact-sheets/detail/sepsis" target="_blank" rel="noopener noreferrer">Organización Mundial de la Salud · Sepsis</a>. Estimaciones para 2017; ficha de 2024.</p>
+        </div>
+      </section>
+      <section class="deck-slide deck-data" aria-labelledby="deck-data-title" hidden>
+        <div class="deck-frame">
+          <div class="deck-section-heading"><p class="eyebrow">02 / LOS DATOS · A + B</p><h2 id="deck-data-title" tabindex="-1">Historias de UCI, <span>hora a hora.</span></h2><p class="deck-intro">PhysioNet / CinC 2019 · Conjuntos A y B de dos sistemas hospitalarios.</p></div>
+          <div class="deck-metrics" aria-label="Resumen combinado de A y B">
+            <article><span>Pacientes</span><strong>40.336</strong><small>2.932 con sepsis</small></article>
+            <article><span>Registros horarios</span><strong>1.552.210</strong><small>Una fila por hora registrada</small></article>
+            <article><span>Pacientes con sepsis</span><strong>7,27 %</strong><small>Al menos una etiqueta positiva</small></article>
+            <article><span>Predictores originales</span><strong>40</strong><small>Más la etiqueta SepsisLabel</small></article>
+          </div>
+          <div class="deck-data-grid">
+            <article class="deck-cohorts"><h3>Dos poblaciones, distinta prevalencia</h3><div class="deck-cohort-row"><div><strong>Conjunto A</strong><span>1.790 / 20.336 <b>8,80 %</b></span></div><div class="deck-cohort-track" role="img" aria-label="Conjunto A: 8,80 % de pacientes con sepsis"><span style="width:8.80%"></span></div></div><div class="deck-cohort-row"><div><strong>Conjunto B</strong><span>1.142 / 20.000 <b>5,71 %</b></span></div><div class="deck-cohort-track" role="img" aria-label="Conjunto B: 5,71 % de pacientes con sepsis"><span style="width:5.71%"></span></div></div><p class="deck-note">Porcentaje de pacientes con al menos un SepsisLabel = 1; no de horas positivas.</p></article>
+            <article class="deck-hours"><h3>Resolución horaria, medición irregular</h3><div class="deck-hour-values"><div><strong>39 <small>h</small></strong><span>Conjunto A</span></div><div><strong>38 <small>h</small></strong><span>Conjunto B</span></div></div><p class="deck-note">Mediana de horas registradas por paciente. Cada hora puede tener distintas variables disponibles.</p></article>
+          </div>
+          <article class="deck-label"><div><p class="eyebrow">LA VARIABLE OBJETIVO</p><h3>SepsisLabel</h3></div><p>Con sepsis: <strong>1 desde seis horas antes</strong> del inicio definido y en adelante.<br>Sin sepsis: <strong>siempre 0.</strong></p><div class="deck-label-window"><span>Horas previas</span><b>−6 h → inicio de sepsis</b></div></article>
+          <p class="deck-source">Fuente: <a href="https://physionet.org/content/challenge-2019/1.0.0/" target="_blank" rel="noopener noreferrer">PhysioNet / CinC Challenge 2019</a>. Resumen de los datos originales A+B del proyecto.</p>
+        </div>
+      </section>
+      <section class="deck-slide deck-missing" aria-labelledby="deck-missing-title" hidden>
+        <div class="deck-frame">
+          <div class="deck-section-heading"><p class="eyebrow">03 / COMPOSICIÓN Y DISPONIBILIDAD · A + B</p><h2 id="deck-missing-title" tabindex="-1">Variables clínicas,<br><span>información incompleta.</span></h2></div>
+          <div class="deck-missing-summary"><strong>80,13 %</strong><p>de faltantes clínicos<span>Signos vitales + laboratorio · 34 variables</span></p></div>
+          <div class="deck-family-grid">
+            <article class="deck-family"><div class="deck-family-heading"><h3>Signos vitales</h3><span>8 variables</span></div><div class="deck-family-rate"><strong>32,39 %</strong><span>faltantes</span></div><div class="deck-family-track" aria-hidden="true"><span style="width:32.39%"></span></div><ul><li>Frecuencia cardíaca</li><li>Oxigenación</li><li>Temperatura</li><li>Presión arterial</li></ul></article>
+            <article class="deck-family"><div class="deck-family-heading"><h3>Laboratorio</h3><span>26 variables</span></div><div class="deck-family-rate"><strong>94,82 %</strong><span>faltantes</span></div><div class="deck-family-track" aria-hidden="true"><span style="width:94.82%"></span></div><ul><li>Bioquímica</li><li>Gases sanguíneos</li><li>Hematología</li><li>Coagulación</li></ul></article>
+            <article class="deck-family"><div class="deck-family-heading"><h3>Contexto del paciente</h3><span>6 variables</span></div><div class="deck-family-rate"><strong>13,14 %</strong><span>faltantes</span></div><div class="deck-family-track" aria-hidden="true"><span style="width:13.14%"></span></div><ul><li>Edad</li><li>Sexo</li><li>Unidad de UCI</li><li>Tiempos de ingreso y estancia</li></ul></article>
+          </div>
+          <p class="deck-source">Faltantes = celdas sin valor / registros horarios, por grupo, en A+B. El 80,13 % excluye contexto y etiqueta.<br>Las listas resumen el contenido de cada grupo; no enumeran todos los predictores.</p>
+        </div>
+      </section>
+      <section class="deck-slide deck-preparation" aria-labelledby="deck-preparation-title" hidden>
+        <div class="deck-frame">
+          <div class="deck-section-heading"><p class="eyebrow">04 / PREPARACIÓN DE LOS DATOS</p><h2 id="deck-preparation-title" tabindex="-1">Del registro clínico <span>a la entrada del modelo.</span></h2></div>
+          <ol class="deck-prep-grid">
+            <li><span class="deck-prep-number" aria-hidden="true">01</span><div><h3>Pacientes adultos</h3><p>Se excluyeron pacientes con alguna edad registrada <strong>menor de 18 años</strong>, junto con todas sus horas.</p><span class="deck-prep-result">40.314 pacientes · 22 excluidos de B</span></div></li>
+            <li><span class="deck-prep-number" aria-hidden="true">02</span><div><h3>Variables por cobertura</h3><p>Se retiraron variables con <strong>≥95 % de pacientes sin observaciones</strong> o <strong>≥99 % de filas faltantes</strong> en A o B. Se retiró también Unit2.</p><span class="deck-prep-result">40 → 31 predictores · misma selección en A y B</span></div></li>
+            <li><span class="deck-prep-number" aria-hidden="true">03</span><div><h3>Separación estratificada</h3><p><strong>80 % desarrollo / 20 % prueba</strong>, por paciente, dentro de cada conjunto A y B, estratificando por presencia de sepsis (label).</p><span class="deck-prep-result">Todas las horas de un paciente permanecen juntas</span></div></li>
+            <li><span class="deck-prep-number" aria-hidden="true">04</span><div><h3>Estandarización</h3><p>Variables clínicas, edad y tiempo de ingreso hospitalario: <strong>media y desviación estándar de entrenamiento</strong>, reutilizadas en validación y prueba.</p><span class="deck-prep-result">z = (x − μ de entrenamiento) / σ de entrenamiento</span></div></li>
+          </ol>
+          <aside class="deck-prep-corrections"><p><strong>FiO₂:</strong> corrección puntual y valores fuera de rango a faltantes.</p><p><strong>Calcium (B):</strong> valores &lt; 2,633 a faltantes.</p></aside>
+          <p class="deck-source">La selección por cobertura y el corte de calcio se definieron antes de la partición.</p>
+        </div>
+      </section>
+      <section class="deck-slide deck-models" aria-labelledby="deck-models-title" hidden>
+        <div class="deck-frame">
+          <div class="deck-section-heading"><p class="eyebrow">05 / MODELOS</p><h2 id="deck-models-title" tabindex="-1">Tres formas de aprender <span>la evolución clínica.</span></h2></div>
+          <div class="deck-model-common" aria-label="Elementos comunes de los tres modelos">
+            <article><strong>26</strong><h3>Variables clínicas temporales</h3><p>Ventanas de registros con valores estandarizados e información de faltantes.</p></article>
+            <article><strong>+5</strong><h3>Datos de contexto al concatenar</h3><p>Edad, ingreso hospitalario, sexo, Unit1 y log(1 + ICULOS).</p></article>
+            <article><strong>σ</strong><h3>Salida sigmoide</h3><p>Un valor entre 0 y 1 para la etiqueta de alerta temprana, en cada hora.</p></article>
+          </div>
+          <div class="deck-model-cards">
+            <article><h3>VS-GRU</h3><p>Una recurrencia independiente por variable.</p><p><strong>26 estados individuales</strong> que se concatenan con el contexto.</p></article>
+            <article><h3>GRU-D · 5 torres</h3><ul><li>Hemodinámica</li><li>Respiración y oxigenación</li><li>Función renal y bioquímica</li><li>Perfil hepático</li><li>Hematología y temperatura</li></ul></article>
+            <article><h3>GRU-D · 3 torres</h3><ul><li>Hemodinámica, oxigenación y temperatura</li><li>Función renal, bioquímica y perfil hepático</li><li>Hematología</li></ul></article>
+          </div>
+          <p class="deck-source">El contexto incluye además 5 indicadores de ausencia. ICULOS representa las horas en UCI y cambia con el tiempo.</p>
+        </div>
+      </section>
+      <section class="deck-slide deck-training" aria-labelledby="deck-training-title" hidden>
+        <div class="deck-frame">
+          <div class="deck-section-heading"><p class="eyebrow">06 / ENTRENAMIENTO Y BÚSQUEDA</p><h2 id="deck-training-title" tabindex="-1">Del piloto <span>al entrenamiento completo.</span></h2></div>
+          <div class="deck-training-pilot"><div><strong>4.000</strong><span>pacientes en el piloto</span><small>3.200 entrenamiento · 800 validación</small></div><p>Se seleccionó la mejor configuración del piloto para cada arquitectura y fuente de datos (<strong>A o A+B</strong>). Después se reutilizó con <strong>todos los pacientes de entrenamiento y validación</strong> disponibles en el esquema de desarrollo.</p></div>
+          <div class="deck-training-rules"><article><h3>Ajuste del modelo</h3><p><strong>Adam</strong> con entropía cruzada binaria. Hasta <strong>30 épocas</strong>, con parada temprana y <strong>paciencia de 4 épocas</strong> según validación.</p></article><article><h3>Búsqueda con Optuna</h3><p><strong>20 configuraciones</strong> por arquitectura y fuente, con <strong>TPE</strong> y poda por mediana para detener ensayos poco prometedores.</p></article></div>
+          <div class="deck-search-space" aria-label="Espacio de búsqueda de hiperparámetros">
+            <article><h3>Común a los modelos</h3><ul><li><b>Ventana:</b> 8, 12 o 16 horas</li><li><b>Tasa de aprendizaje:</b> 10⁻⁴ a 10⁻², escala logarítmica</li><li><b>Tamaño de lote:</b> 64, 128 o 256</li></ul></article>
+            <article><h3>Torres GRU-D</h3><ul><li><b>Unidades por torre:</b> 8, 16 o 32</li><li><b>Capa densa:</b> 32 o 64 unidades</li><li><b>Dropout:</b> 0 a 0,3</li><li><b>L2 de entrada y recurrencia:</b> 0, 10⁻⁵ o 10⁻⁴</li></ul></article>
+            <article><h3>VS-GRU</h3><ul><li><b>Salida:</b> directa o con una capa oculta de 32 unidades</li></ul><p>Cada variable mantiene un estado escalar.</p></article>
+          </div>
+        </div>
+      </section>
+      <section class="deck-slide deck-evaluation" aria-labelledby="deck-evaluation-title" hidden>
+        <div class="deck-frame">
+          <div class="deck-section-heading"><p class="eyebrow">07 / EVALUACIÓN · PRUEBA RESERVADA</p><h2 id="deck-evaluation-title" tabindex="-1">Entrenados con A+B. <span>Evaluados en test A+B.</span></h2></div>
+          <div class="deck-metrics" aria-label="Cohorte de prueba A y B"><article><span>Pacientes</span><strong>8.063</strong></article><article><span>Horas evaluadas</span><strong>312.513</strong></article><article><span>Horas positivas</span><strong>5.585</strong></article><article><span>Referencia del AP</span><strong>0,0179</strong></article></div>
+          <div class="deck-test-table-wrap"><table class="deck-test-table"><caption class="sr-only">Resultados del entrenamiento completo con A+B sobre test A+B</caption><thead><tr><th scope="col">Modelo</th><th scope="col">AP</th><th scope="col">Utilidad</th><th scope="col">AUROC</th><th scope="col">Horas con alerta</th><th scope="col">Recall por hora</th><th scope="col">Umbral</th></tr></thead><tbody><tr><th scope="row">VS-GRU</th><td>0,0908</td><td>0,3434</td><td>0,8027</td><td>17,54 %</td><td>60,18 %</td><td>0,02304</td></tr><tr><th scope="row">5 torres</th><td class="deck-test-best">0,1010</td><td class="deck-test-best">0,3596</td><td>0,8130</td><td>15,41 %</td><td>58,35 %</td><td>0,03023</td></tr><tr><th scope="row">3 torres</th><td>0,0957</td><td>0,3323</td><td>0,8058</td><td>17,95 %</td><td>59,75 %</td><td>0,03156</td></tr></tbody></table></div>
+          <p class="deck-test-improvement">De 4.000 a 32.251 pacientes de desarrollo: AP y utilidad mejoran en los tres modelos.</p>
+          <div class="deck-test-comparison"><article><h3>VS-GRU</h3><dl><div><dt>AP</dt><dd>0,0860<span aria-label="a">→</span><strong>0,0908</strong></dd></div><div><dt>Utilidad</dt><dd>0,3144<span aria-label="a">→</span><strong>0,3434</strong></dd></div></dl></article><article><h3>5 torres</h3><dl><div><dt>AP</dt><dd>0,0779<span aria-label="a">→</span><strong>0,1010</strong></dd></div><div><dt>Utilidad</dt><dd>0,3003<span aria-label="a">→</span><strong>0,3596</strong></dd></div></dl></article><article><h3>3 torres</h3><dl><div><dt>AP</dt><dd>0,0677<span aria-label="a">→</span><strong>0,0957</strong></dd></div><div><dt>Utilidad</dt><dd>0,2629<span aria-label="a">→</span><strong>0,3323</strong></dd></div></dl></article></div>
+          <p class="deck-source">Comparación sobre los mismos pacientes de test. Cada corrida conserva su escalado y umbral de validación.<br>Se destacan los máximos de AP y utilidad. Recall: horas positivas con alerta; horas con alerta: proporción de todas las horas evaluadas.</p>
+        </div>
+      </section>
+      <section class="deck-slide deck-conclusions" aria-labelledby="deck-conclusions-title" hidden>
+        <div class="deck-frame">
+          <div class="deck-section-heading"><p class="eyebrow">08 / HALLAZGO PRINCIPAL Y CONCLUSIONES</p><h2 id="deck-conclusions-title" tabindex="-1">Aprender el riesgo <span>es un comienzo.</span></h2></div>
+          <div class="deck-main-finding"><p>El rendimiento sigue siendo modesto. Son prototipos académicos: <strong>no justifican su uso médico real.</strong></p></div>
+          <div class="deck-conclusion-cards">
+            <article><h3>Resultados</h3><p>Los tres modelos superan el AP de referencia y <strong>mejoran al ampliar el entrenamiento.</strong></p></article>
+            <article><h3>Límites</h3><p>La búsqueda se realizó en el piloto. No se establecieron diferencias estadísticamente fiables entre arquitecturas.</p></article>
+            <article><h3>Siguiente paso</h3><p>Ampliar la búsqueda, comparar con modelos sencillos y validar en una <strong>evaluación independiente.</strong></p></article>
+          </div>
+        </div>
+      </section>
+      <section class="deck-slide deck-closing" aria-labelledby="deck-closing-title" hidden>
+        <div class="deck-frame">
+          <p class="eyebrow">APPR · PREDICCIÓN TEMPRANA DE SEPSIS</p>
+          <h2 id="deck-closing-title" tabindex="-1">Gracias.</h2>
+          <p class="deck-closing-question">¿Preguntas?</p>
+          <div class="deck-closing-author"><strong>Jonatan Palomares</strong><span>Aprendizaje profundo</span></div>
+        </div>
+      </section>
+    </main>
+    <footer class="deck-footer"><span class="deck-hint">Usa las flechas o desliza para avanzar</span><nav class="deck-controls" aria-label="Navegación de diapositivas"><button type="button" id="deck-prev" aria-label="Diapositiva anterior" disabled>←</button><span id="deck-count" role="status" aria-live="polite" aria-atomic="true">01 / 10</span><button type="button" id="deck-next" aria-label="Diapositiva siguiente">→</button></nav></footer>
+    <div class="deck-progress" aria-hidden="true"><span></span></div>
+  </div>
+  <div id="full-version">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="masthead">
     <div class="shell">
@@ -145,5 +279,7 @@
   </main>
   <footer class="shell footer"><span><b>APPR</b> · Predicción temprana de sepsis</span><span>PhysioNet 2019 · Presentación del proyecto</span></footer>
   <noscript><p class="shell">Activa JavaScript para cambiar de sección y explorar los resúmenes de datos.</p></noscript>
+  </div>
+  <noscript><style>#presentation{display:none!important}#full-version{display:block!important}body.presentation-mode{overflow:auto}</style></noscript>
 </body>
 </html>

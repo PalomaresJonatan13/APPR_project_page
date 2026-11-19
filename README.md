@@ -2,6 +2,11 @@
 
 Abre `index.html` directamente en un navegador. No requiere instalación, conexión a Internet ni servidor; los enlaces a fuentes externas sí requieren conexión.
 
+La vista inicial es una presentación resumida con diez diapositivas: portada, contexto clínico, resumen de datos A+B, grupos de variables con sus faltantes, preparación de los datos, modelos, entrenamiento con búsqueda de hiperparámetros, evaluación en test A+B, conclusiones y cierre. El contenido se agrupa en un marco central de hasta 1080 px. Haz clic en **APPR**, en el encabezado de cualquiera de las vistas, para alternar entre presentación y versión completa. La navegación admite flechas del teclado, scroll, botones y gestos táctiles. En pantallas pequeñas se puede desplazar el contenido de una diapositiva antes de cambiar a la siguiente. Las animaciones respetan la preferencia de movimiento reducido. Para ampliar la presentación, añade secciones `.deck-slide` dentro de `.deck-stage`; el contador y los límites de navegación se calculan automáticamente.
+
+- `presentation.css`: diseño aislado de la vista resumida, con la misma paleta.
+- `presentation.js`: cambio de vista y navegación animada entre diapositivas.
+
 Secciones desarrolladas: **Sepsis**, **Datos**, **Preparación de los datos**, **Modelos**, **Entrenamiento**, **Evaluación y comparación** y **Conclusiones**. Cada sección termina con un enlace a la siguiente, salvo Conclusiones.
 
 - `index.html`: estructura y contenido.
